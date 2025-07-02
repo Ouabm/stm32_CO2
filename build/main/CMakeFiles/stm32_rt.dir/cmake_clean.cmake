@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/Co2_stm32/bin/stm32_rt.elf"
-  "/home/oualid-boudemagh/Bureau/Cadmium_projects/cadmium_v2/example/Co2_stm32/bin/stm32_rt.pdb"
+  "/home/oualid-boudemagh/Bureau/stm32_CO2/bin/stm32_rt.elf"
+  "/home/oualid-boudemagh/Bureau/stm32_CO2/bin/stm32_rt.pdb"
   "CMakeFiles/stm32_rt.dir/include/Core/Src/adc.c.obj"
   "CMakeFiles/stm32_rt.dir/include/Core/Src/adc.c.obj.d"
   "CMakeFiles/stm32_rt.dir/include/Core/Src/gpio.c.obj"
