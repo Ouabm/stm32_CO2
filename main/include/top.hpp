@@ -10,52 +10,48 @@
 #include "stm32h7xx_hal_dma.h"
 #include "stm32h7xx_hal_uart.h"
 
-
-extern "C"{
-    #include "adc.h"
-   
-} 
+extern "C"
+{
+#include "adc.h"
+}
 using namespace cadmium;
 
-struct top_coupled : public Coupled {
-    top_coupled(const std::string& id) : Coupled(id) {
-        // __HAL_RCC_GPIOB_CLK_ENABLE();
+struct top_coupled : public Coupled
+{
+    top_coupled(const std::string &id) : Coupled(id)
+    {
+        
         __HAL_RCC_GPIOA_CLK_ENABLE();
         __HAL_RCC_GPIOB_CLK_ENABLE();
-    
-        auto atomique = addComponent<atomic_model>("atomique");
 
-        // Configuration manuelle du GPIO
+        auto atomique = addComponent<atomic_model>("atomic");
+
+        
         static GPIO_InitTypeDef led_config = {
             .Pin = GPIO_PIN_0,
             .Mode = GPIO_MODE_OUTPUT_PP,
             .Pull = GPIO_NOPULL,
             .Speed = GPIO_SPEED_FREQ_LOW,
-            .Alternate = 0
-        };
-          // Configuration manuelle du GPIO
-        
+            .Alternate = 0};
+       
 
-        GPIO_TypeDef* led_port = GPIOB;
-        GPIO_TypeDef* inputport = GPIOA;
-      
-        // Ajout du composant DigitalOutput avec paramètres
+        GPIO_TypeDef *led_port = GPIOB;
+        GPIO_TypeDef *inputport = GPIOA;
+
+       
         auto digitaloutput = addComponent<DigitalOutput>(
             "digitaloutput",
             led_port,
-            &led_config
-        );
+            &led_config);
         auto analogueinput = addComponent<AnalogInput>(
             "analogueinout",
             inputport,
-            &hadc1
-        );
-        auto reception=addComponent<Reception>("reception");
-       
-        addCoupling(analogueinput->out,reception->in);
-        addCoupling(reception->out,digitaloutput->in);
-       
+            &hadc1);
+        auto reception = addComponent<Reception>("reception");
+
+        addCoupling(analogueinput->out, reception->in);
+        addCoupling(reception->out, digitaloutput->in);
     }
 };
 
-#endif  // SAMPLE_TOP_HPP
+#endif // SAMPLE_TOP_HPP
