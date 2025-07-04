@@ -44,6 +44,6 @@ cd stm32_CO2/
 ```
   then
 ```bash
-./Build_stm32
+./build_stm32
 ```
 
