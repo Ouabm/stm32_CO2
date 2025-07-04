@@ -25,13 +25,12 @@ target_sources(stm32_rt PRIVATE
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/main.c
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/tim.c
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/gpio.c
-     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/adc.c
- 
+    ${PROJECT_SOURCE_DIR}/main/include/Core/Src/adc.c
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/system_stm32h7xx.c
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/stm32h7xx_hal_msp.c
     ${PROJECT_SOURCE_DIR}/main/include/Core/Src/system_stm32h7xx.c
-      ${PROJECT_SOURCE_DIR}/main/include/Core/Src/syscalls.c
-        ${PROJECT_SOURCE_DIR}/main/include/Core/Src/sysmem.c
+    ${PROJECT_SOURCE_DIR}/main/include/Core/Src/syscalls.c
+    ${PROJECT_SOURCE_DIR}/main/include/Core/Src/sysmem.c
  
 )
 
@@ -43,6 +42,7 @@ target_include_directories(stm32_rt PUBLIC
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/CMSIS/Include
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/BSP/STM32H7xx_Nucleo
     ${PROJECT_SOURCE_DIR}/main/include/Drivers/STM32H7xx_HAL_Driver/Inc
+    ${PROJECT_SOURCE_DIR}/main/include/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
     ${PROJECT_SOURCE_DIR}/main/include/Core/Inc
     ${PROJECT_SOURCE_DIR}/main/include
     ${PROJECT_SOURCE_DIR}/main/include/USB_DEVICE/App
