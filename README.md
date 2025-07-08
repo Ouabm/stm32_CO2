@@ -46,4 +46,8 @@ cd stm32_CO2/
 ```bash
 ./build_stm32
 ```
+## Pins 
+
+![Aperçu](assets/pins.png)
+
 ![Aperçu](assets/img.jpeg)
